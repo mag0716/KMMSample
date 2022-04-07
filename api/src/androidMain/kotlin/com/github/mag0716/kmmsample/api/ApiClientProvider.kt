@@ -1,4 +1,4 @@
-package com.github.mag0716.kmmsample.kmmapi
+package com.github.mag0716.kmmsample.api
 
 import io.ktor.client.engine.android.*
 

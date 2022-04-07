@@ -1,4 +1,4 @@
-package com.github.mag0716.kmmsample.kmmapi.response
+package com.github.mag0716.kmmsample.api.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

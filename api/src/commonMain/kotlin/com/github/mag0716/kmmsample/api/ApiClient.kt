@@ -1,6 +1,6 @@
-package com.github.mag0716.kmmsample.kmmapi
+package com.github.mag0716.kmmsample.api
 
-import com.github.mag0716.kmmsample.kmmapi.response.Repository
+import com.github.mag0716.kmmsample.api.response.Repository
 import io.ktor.client.*
 import io.ktor.client.engine.*
 import io.ktor.client.features.json.*

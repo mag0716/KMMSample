@@ -14,7 +14,7 @@ kotlin {
 //        iosSimulatorArm64()
 //    ).forEach {
 //        it.binaries.framework {
-//            baseName = "kmmapi"
+//            baseName = "api"
 //            xcf.add(this)
 //        }
 //    }
