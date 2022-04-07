@@ -24,8 +24,6 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
                 implementation("io.ktor:ktor-client-serialization:1.6.8")
-                // TODO:プロダクトでは依存しないようにする
-                api("io.ktor:ktor-client-mock:1.6.8")
             }
         }
         val commonTest by getting {
