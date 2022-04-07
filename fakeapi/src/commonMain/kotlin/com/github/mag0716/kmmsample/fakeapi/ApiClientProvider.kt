@@ -1,12 +1,13 @@
-package com.github.mag0716.kmmsample.api
+package com.github.mag0716.kmmsample.fakeapi
 
+import com.github.mag0716.kmmsample.api.ApiClient
 import com.github.mag0716.kmmsample.api.response.Repository
 import io.ktor.client.engine.mock.*
 import io.ktor.http.*
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-class FakeApiClientProvider {
+class ApiClientProvider {
     fun provideApiClient() = ApiClient(
         httpClientEngine = MockEngine.create {
             addHandler { request ->
