@@ -39,9 +39,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
 
-    // TODO:flavorごとに利用するモジュールを差し替える
-    implementation project(":api")
-    implementation project(":fakeapi")
+    implementation project(":kmmapi")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
