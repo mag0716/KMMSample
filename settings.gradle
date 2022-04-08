@@ -17,3 +17,4 @@ rootProject.name = "KMMSample"
 include ':app'
 include ':api'
 include ':fakeapi'
+include ':repository'
