@@ -5,11 +5,15 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.github.mag0716.kmmsample.fakeapi.ApiClientProvider
+import com.github.mag0716.kmmsample.repository.GitHubUserRepository
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textView: TextView
+    private val repository: GitHubUserRepository by lazy {
+        (application as App).repository
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,9 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button).setOnClickListener {
             lifecycleScope.launchWhenStarted {
-                //val apiClient = ApiClientProvider().provideApiClient()
-                val apiClient = ApiClientProvider().provideApiClient()
-                val repositoryList = apiClient.repos("mag0716")
+                val repositoryList = repository.getRepositoryList("mag0716")
                 textView.text = repositoryList.toString()
             }
         }

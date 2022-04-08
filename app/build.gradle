@@ -39,6 +39,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
 
+    implementation project(":repository")
     // TODO:Flavorによって差し替えられるようにする
     implementation project(':api')
     implementation project(':fakeapi')
