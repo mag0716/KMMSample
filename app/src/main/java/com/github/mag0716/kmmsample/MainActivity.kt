@@ -5,12 +5,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.github.mag0716.kmmsample.repository.GitHubUserRepository
+import com.github.mag0716.kmmsample.repository.GitHubRepositoryRepository
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textView: TextView
-    private val repository: GitHubUserRepository by lazy {
+    private val repository: GitHubRepositoryRepository by lazy {
         (application as App).repository
     }
 
