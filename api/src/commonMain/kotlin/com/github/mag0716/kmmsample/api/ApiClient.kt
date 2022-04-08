@@ -1,6 +1,6 @@
 package com.github.mag0716.kmmsample.api
 
-import com.github.mag0716.kmmsample.api.response.Repository
+import com.github.mag0716.kmmsample.api.response.RepositoryResponse
 import io.ktor.client.*
 import io.ktor.client.engine.*
 import io.ktor.client.features.json.*
@@ -13,7 +13,7 @@ import kotlinx.coroutines.withContext
 open class ApiClient(
     private val httpClientEngine: HttpClientEngine
 ) {
-    suspend fun repos(userName: String): List<Repository> = withContext(Dispatchers.Default) {
+    suspend fun repos(userName: String): List<RepositoryResponse> = withContext(Dispatchers.Default) {
         HttpClient(
             httpClientEngine
         ) {

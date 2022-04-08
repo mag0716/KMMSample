@@ -1,7 +1,7 @@
 package com.github.mag0716.kmmsample.fakeapi
 
 import com.github.mag0716.kmmsample.api.ApiClient
-import com.github.mag0716.kmmsample.api.response.Repository
+import com.github.mag0716.kmmsample.api.response.RepositoryResponse
 import io.ktor.client.engine.mock.*
 import io.ktor.http.*
 import kotlinx.serialization.encodeToString
@@ -19,7 +19,7 @@ class ApiClientProvider {
                             respond(
                                 content = Json.encodeToString(
                                     listOf(
-                                        Repository(1L, "name", "fullName")
+                                        RepositoryResponse(1L, "name", "fullName")
                                     )
                                 ),
                                 headers = responseHeader

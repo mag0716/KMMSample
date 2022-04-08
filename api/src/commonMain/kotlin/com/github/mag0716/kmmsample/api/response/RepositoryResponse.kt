@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Repository(
+data class RepositoryResponse(
     val id: Long,
     val name: String,
     @SerialName("full_name") val fullName: String
