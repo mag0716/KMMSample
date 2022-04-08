@@ -6,7 +6,7 @@ import com.github.mag0716.kmmsample.api.ApiClientProvider
 import com.github.mag0716.kmmsample.repository.GitHubRepositoryRepository
 
 // TODO: Hiltを利用する
-class App : Application() {
+open class App : Application() {
 
     // Repository
     val repository: GitHubRepositoryRepository by lazy {
@@ -15,6 +15,10 @@ class App : Application() {
 
     // Data Source
     private val apiClient: ApiClient by lazy {
-        ApiClientProvider().provideApiClient()
+        provideApiClient()
+    }
+
+    open fun provideApiClient(): ApiClient {
+        return ApiClientProvider().provideApiClient()
     }
 }

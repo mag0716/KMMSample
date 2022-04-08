@@ -49,9 +49,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
 
     implementation project(":repository")
-    // TODO:Flavorによって差し替えられるようにする
     implementation project(':api')
-    implementation project(':fakeapi')
+    devImplementation project(':fakeapi')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
