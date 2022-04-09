@@ -5,14 +5,10 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.github.mag0716.kmmsample.repository.GitHubRepositoryRepository
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textView: TextView
-    private val repository: GitHubRepositoryRepository by lazy {
-        (application as App).repository
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button).setOnClickListener {
             lifecycleScope.launchWhenStarted {
-                val repositoryList = repository.getRepositoryList("mag0716")
+                val getGitHubRepositoryList =
+                    (application as App).provideGetGitHubRepositoryUseCase()
+                val repositoryList = getGitHubRepositoryList("mag0716")
                 textView.text = repositoryList.toString()
             }
         }
