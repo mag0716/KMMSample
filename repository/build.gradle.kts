@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
-
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
@@ -7,7 +5,7 @@ plugins {
 
 kotlin {
     android()
-    
+
 //    val xcf = XCFramework()
 //    listOf(
 //        iosX64(),
@@ -23,7 +21,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":api"))
+                api(project(":api"))
             }
         }
         val commonTest by getting {
