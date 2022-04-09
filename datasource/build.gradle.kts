@@ -7,7 +7,7 @@ plugins {
 
 kotlin {
     android()
-    
+
 //    val xcf = XCFramework()
 //    listOf(
 //        iosX64(),
@@ -21,7 +21,11 @@ kotlin {
 //    }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                api(project(":api"))
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))

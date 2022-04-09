@@ -21,7 +21,8 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(project(":api"))
+                // FIXME: apiモジュールで定義したレスポンスは別クラスで詰め直すようにしたらimplementationでよい
+                api(project(":datasource"))
             }
         }
         val commonTest by getting {

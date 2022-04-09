@@ -50,7 +50,7 @@ dependencies {
 
     implementation project(":usecase")
     implementation project(":repository")
-    implementation project(':api')
+    implementation project(':datasource')
     devImplementation project(':fakeapi')
 
     testImplementation 'junit:junit:4.13.2'
