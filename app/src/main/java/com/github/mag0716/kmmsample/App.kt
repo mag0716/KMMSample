@@ -4,21 +4,21 @@ import android.app.Application
 import com.github.mag0716.kmmsample.api.ApiClient
 import com.github.mag0716.kmmsample.api.ApiClientProvider
 import com.github.mag0716.kmmsample.repository.GitHubRepositoryRepository
-import com.github.mag0716.kmmsample.repository.RealGitHubRepositoryRepository
+import com.github.mag0716.kmmsample.repository.RepositoryFactory
 import com.github.mag0716.kmmsample.usecase.GetGitHubRepositoryUseCase
-import com.github.mag0716.kmmsample.usecase.RealGetGitHubRepositoryUseCase
+import com.github.mag0716.kmmsample.usecase.UseCaseFactory
 
 // TODO: Hiltを利用する
 open class App : Application() {
 
     // UseCase
     fun provideGetGitHubRepositoryUseCase(): GetGitHubRepositoryUseCase {
-        return RealGetGitHubRepositoryUseCase(repository)
+        return UseCaseFactory.provideGetGitHubRepositoryUseCase(repository)
     }
 
     // Repository
     private val repository: GitHubRepositoryRepository by lazy {
-        RealGitHubRepositoryRepository(apiClient)
+        RepositoryFactory.provideGitHubRepositoryRepository(apiClient)
     }
 
     // Data Source
