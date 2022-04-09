@@ -1,10 +1,7 @@
 package com.github.mag0716.kmmsample.usecase
 
-import com.github.mag0716.kmmsample.repository.GitHubRepositoryRepository
+import com.github.mag0716.kmmsample.api.response.RepositoryResponse
 
-class GetGitHubRepositoryUseCase(
-    private val repository: GitHubRepositoryRepository
-) {
-    suspend operator fun invoke(userName: String) =
-        repository.getRepositoryList(userName)
+interface GetGitHubRepositoryUseCase {
+    suspend operator fun invoke(userName: String): List<RepositoryResponse>
 }
