@@ -23,6 +23,7 @@ kotlin {
             dependencies {
                 // FIXME: apiモジュールで定義したレスポンスは別クラスで詰め直すようにしたらimplementationでよい
                 api(project(":datasource"))
+                implementation("io.github.aakira:napier:1.4.1")
             }
         }
         val commonTest by getting {
